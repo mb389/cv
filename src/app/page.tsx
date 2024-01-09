@@ -94,7 +94,6 @@ export default function Page() {
           </Avatar>
         </div>
         <Section>
-          <h2 className="text-xl font-bold">About</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
             {RESUME_DATA.summary}
           </p>
@@ -148,7 +147,7 @@ export default function Page() {
                                 role.description.map((description) => (
                                   <div
                                     key={description}
-                                    className="font-mono text-xs text-muted-foreground"
+                                    className="mb-1 font-mono text-xs text-muted-foreground"
                                   >
                                     • {description}
                                   </div>

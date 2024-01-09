@@ -60,10 +60,8 @@ export const RESUME_DATA: ResumeDataType = {
   initials: "MB",
   location: "Brooklyn, NY",
   locationLink: "https://www.google.com/maps/place/Brooklyn",
-  about:
-    "Software engineer & tech lead specializing in developing web applications with the user in mind",
   summary:
-    "I'm a software engineer based in New York City, as well as an avid marathoner and world traveler with a passion for learning new concepts & skills and applying them to building great products.",
+    "Software engineer & tech lead specializing in developing web applications with the user in mind",
   avatarUrl: "https://avatars.githubusercontent.com/u/12397314?v=4",
   personalWebsiteUrl: "https://michael.bushoy.com",
   contact: {
