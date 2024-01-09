@@ -112,7 +112,7 @@ export default function Page() {
                       </a>
 
                       <span className="inline-flex gap-x-1">
-                        {work.badges.map((badge) => (
+                        {work.badges?.map((badge) => (
                           <Badge
                             variant="secondary"
                             className="align-middle text-xs"
@@ -133,7 +133,41 @@ export default function Page() {
                   </h4>
                 </CardHeader>
                 <CardContent className="mt-2 text-xs">
-                  {work.description}
+                  {work.roles
+                    ? work.roles.map((role) => {
+                        return (
+                          <div
+                            key={role.title}
+                            className="mt-2 flex items-center justify-between gap-x-2 text-base"
+                          >
+                            <div className="gap-x-2">
+                              <h4 className="mb-1 font-mono text-sm italic leading-none">
+                                {role.title}
+                              </h4>
+                              {role.description instanceof Array ? (
+                                role.description.map((description) => (
+                                  <div
+                                    key={description}
+                                    className="font-mono text-xs text-muted-foreground"
+                                  >
+                                    • {description}
+                                  </div>
+                                ))
+                              ) : (
+                                <div className="font-mono text-xs text-muted-foreground">
+                                  {role.description}
+                                </div>
+                              )}
+                            </div>
+                            {role.start && role.end && (
+                              <div className="font-sans text-sm tabular-nums text-gray-500">
+                                {role.start} - {role.end}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })
+                    : work.description}
                 </CardContent>
               </Card>
             );
@@ -167,23 +201,32 @@ export default function Page() {
             })}
           </div>
         </Section>
-
-        <Section className="print-force-new-page scroll-mb-16">
-          <h2 className="text-xl font-bold">Projects</h2>
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {RESUME_DATA.projects.map((project) => {
-              return (
-                <ProjectCard
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.techStack}
-                  link={"link" in project ? project.link.href : undefined}
-                />
-              );
+        <Section>
+          <h2 className="text-xl font-bold">Focus Areas</h2>
+          <div className="flex flex-wrap gap-1">
+            {RESUME_DATA.focusAreas.map((area) => {
+              return <Badge key={area}>{area}</Badge>;
             })}
           </div>
         </Section>
+        {RESUME_DATA.projects.length ? (
+          <Section className="print-force-new-page scroll-mb-16">
+            <h2 className="text-xl font-bold">Projects</h2>
+            <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+              {RESUME_DATA.projects.map((project) => {
+                return (
+                  <ProjectCard
+                    key={project.title}
+                    title={project.title}
+                    description={project.description}
+                    tags={project.techStack}
+                    link={"link" in project ? project.link.href : undefined}
+                  />
+                );
+              })}
+            </div>
+          </Section>
+        ) : null}
       </section>
 
       <CommandMenu
