@@ -106,7 +106,7 @@ export const RESUME_DATA: ResumeDataType = {
         {
           title: "Cloud Platform, UI Lead",
           description: [
-            "Lead team of 6 engineers on creation of Coinbase`s developer platform, shipping support for recurring billing, organization & project management, API key management, and more.",
+            "Led team of frontend engineers on creation of Coinbase`s developer platform and onboarding of initial products, shipping support for recurring billing, organization & project management, API key management, and more.",
           ],
         },
         {
