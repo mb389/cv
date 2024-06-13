@@ -104,9 +104,9 @@ export const RESUME_DATA: ResumeDataType = {
       end: "2024",
       roles: [
         {
-          title: "Cloud Platform, UI Lead",
+          title: "Developer Platform (fka Cloud), UI Lead",
           description: [
-            "Led team of frontend engineers on creation of Coinbase`s developer platform and onboarding of initial products, shipping support for recurring billing, organization & project management, API key management, and more.",
+            "Led team of frontend engineers on creation of Coinbase`s external developer platform and onboarding of initial products, shipping support for recurring billing, organization & project management, API key management, and more.",
           ],
         },
         {
@@ -116,7 +116,7 @@ export const RESUME_DATA: ResumeDataType = {
           ],
         },
         {
-          title: "Retail Advanced Trading, Web Lead",
+          title: "Advanced Trading, Web Lead",
           description: [
             "Led the build-out of the Advanced Trading product, the successor to Coinbase Pro, to a successful public launch. It is now responsible for processing most of Coinbase`s $100bn+ annual consumer trading volume. ",
             "Acted as lead engineer, project manager, primary liaison with product/design/backend, and mentor to junior engineers.",
